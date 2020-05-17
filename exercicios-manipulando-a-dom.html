@@ -1,0 +1,79 @@
+<html>
+<meta charset="utf-8">
+
+<head>
+    <title>Exercícios - Manipulando a DOM</title>
+</head>
+
+<body>
+
+    <script>
+        // Exercício 1
+        let body = document.querySelector("body");
+
+        let button = document.createElement("button");
+        button.textContent = "Criar quadrado";
+
+        body.appendChild(button);
+
+        button.onclick = ()=>{
+            console.log("Criando quadrado...");
+            let quadrado = document.createElement("div");
+            quadrado.style.backgroundColor = "red";
+            quadrado.style.width = 100;
+            quadrado.style.height = 100;
+            quadrado.style.marginBottom = "2px";
+            body.appendChild(quadrado);
+            quadrado.onmouseover = ()=>{
+                quadrado.style.backgroundColor = newColor;
+            }
+        }
+
+        // Exercício 2
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor();
+
+       // Exercício 3
+        var nomes = ["Diego","Gabriel","Lucas"];
+
+        let ul = document.createElement("ul");
+
+        nomes.forEach((nome)=>{
+            let li = document.createElement("li");
+            li.textContent = nome;
+            ul.appendChild(li);
+        });
+
+        body.appendChild(ul);
+
+        // Exercício 4
+        let input = document.createElement("input");
+        input.setAttribute("type","text");
+        input.setAttribute("name","nome");
+
+        let btAdicionar = document.createElement("button");
+        btAdicionar.textContent = "Adicionar";
+
+        body.appendChild(input);
+        body.appendChild(btAdicionar);
+
+        btAdicionar.onclick = function adicionar(){
+            let valorInput = input.value;
+            nomes.push(valorInput);
+            ul.innerHTML += `<li>${valorInput}</li>`;
+            input.value = "";
+            console.log(nomes);
+        };
+        
+
+    </script>
+</body>
+
+</html>
