@@ -7,6 +7,7 @@ var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 // Se o JSON.parse() não trouxer um valor aceitável para o que é esperado,
 // no caso um array para iterar na função renderTodos().
 // A variável todos irá receber um array vazio || []
+// Para checar o que está salvo no localStorage. DevTools > Application > LocalStorage > file://
 
 
 function renderTodos(){
