@@ -34,13 +34,14 @@ function buscarRepositorios(user) {
             listaRepositorios(repositorios);
         })
         .catch((error) => {
-            console.warn("Usuário não encontrado\n"+error);
+            let paragrafoError = document.createElement("p");
+            paragrafoError.textContent = "Usuário não encontrado";
+            body.appendChild(paragrafoError);
         })
 }
 
 function listaRepositorios(data){
     let lista = document.createElement("ul");
-
     for(let repo of data){
         let repositorio = document.createElement("li");
 
