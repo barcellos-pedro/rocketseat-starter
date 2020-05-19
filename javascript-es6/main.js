@@ -242,3 +242,28 @@ const usuario2 = {...usuario1, nome:"Gabriel"}; //Pegamos todas as propiedades d
 console.log(usuario2);
 */
 
+//Template Literals
+//Forma de incluir variáveis dentro de Strings a partir do ES6+
+/*
+const nome = "Diego";
+const idade = 23;
+//Concatenando de forma comum
+console.log("Meu nome é " + nome + " e tenho " + idade + " anos");
+//Concatenando com Template Literals
+console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+*/
+
+//Object Short Syntax
+//Quando o nome da propiedade do objeto for igual o nome da variável, podemos deixar somente a variavel/propieade 1 vez
+/*
+const nome = 'Diego';
+const idade = 23
+
+const usuario = {
+    nome,
+    idade,
+    empresa: 'Rockeseat',
+};
+
+console.log(usuario);
+*/
