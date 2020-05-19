@@ -173,4 +173,72 @@ function mostraNome({ nome, idade, endereco:{cidade} }){ //Passamos um objeto co
 mostraNome(usuario);
 */
 //Operadores rest/spread
+
+/*Esses operadores ainda não foram acoplados a versão principal do babel
+//Então é necessário instalá-los em forma de plug-ins
+//No terminal = yarn add @babel/plugin-proposal-object-rest-spread
+//No babel.rc, criar um novo array de plugins = "plugins": ["@babel/plugin-proposal-object-rest-spread"]
+//Parar o yarn dev e executar novamente
+*/
+
+/*
+//REST
+//Server para pegar o resto das propiedades de um objeto ou vetor
+
+const usuario = {
+    nome: "Diego",
+    idade: 23,
+    empresa: "Rocketseat"
+};
+
+const {nome, ...resto} = usuario; //idade e empresa ficaram na variável ...resto
+console.log(nome);
+console.log(resto);
+
+//Podemos utilizar em um vetor também
+const arr = [1,2,3,4];
+const [ a,b, ...c ] = arr;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+//Podemos utilizar para parâmetros de funções
+//Função normal
+function soma2(a,b,c){
+    return a+b+c;
+}
+console.log(soma2(1,3,4));
+
+//Função com rest operator
+function soma(...params){
+    return params.reduce((total,next) => total + next);
+    //Sem o reduce, iria retornar um array com os números passados como parâmetros
+}
+console.log(soma(1,2,3));
+
+//Ou assim
+function soma3(a,b, ...params){
+    console.log(a,b);
+    console.log(params);
+}
+console.log(soma3(1,2,3,4));
+
+//SPREAD
+//Propaga/Repassa as informações de um objeto ou array para outra estrutura de dados
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+
+const arr3 = [...arr, ...arr2]; //Irá copiar cada uma das informações dos arrays e juntar em um array novo
+console.log(arr3);
+
+const usuario1 = {
+    nome: 'Diego',
+    idade: 23,
+    empresa: "Rocketseat",
+};
+
+const usuario2 = {...usuario1, nome:"Gabriel"}; //Pegamos todas as propiedades do objeto usuario1, porém alteramos o valor do nome
+console.log(usuario2);
+*/
 "use strict";
