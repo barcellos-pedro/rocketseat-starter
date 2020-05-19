@@ -95,4 +95,81 @@ const find = arr.find(function(item){
 });
 console.log(find);
 */
+
 //Arrow functions
+/*
+const arr = [1,3,4,5,6];
+
+const newArr3 = arr.map((item)=>{
+    return item*2;
+})
+
+//Quando a função recebe apenas 1 parâmetro, podemos remover os ()
+const newArr2 = arr.map(item=>{
+    return item*2;
+});
+
+//Se a função for retornar somente um linha simples, podemos reduzir a verbosidade dessa forma.
+const newArr = arr.map(item => item*2);
+console.log(newArr);
+
+const teste4 = ()=>{
+    return "Hello teste 4";
+}
+const teste3 = () => [1,2,3];
+const teste2 = () => "Pedro";
+const teste = () => ({nome:"Diego"}); // Para retornar um objeto diretamente se o return, é necessário envolver o objeto no ()
+console.log(teste());
+*/
+
+//Valores padrão
+/*
+//Podemos setar valores padrão para os parâmetros dentro de uma função
+function soma(a=3,b=6){
+    return a+b;
+}
+
+console.log(soma(1)); //Retona 7
+console.log(soma()); //Retorna 9
+
+const soma2 = (a = 3, b = 6)=> a + b;
+console.log(soma2());
+*/
+
+//Desestruturação | de objetos no JS ES6+ pra frente
+/*
+const usuario = {
+    nome: "Diego",
+    idade: 23,
+    endereco: {
+        cidade: "Rio do Sul",
+        estado: "SC",
+    },
+};
+
+// Pegando as propiedades do objeto da forma comum
+const nome_padrao = usuario.nome;
+const idade_padrao = usuario.idade;
+
+//Desestruturamos dessa forma | É necessário passar o nome exato das propiedades, e chamá-las com o mesmo nome do attr
+const {nome, idade, endereco: {cidade,estado}} = usuario;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+console.log(estado);
+
+//Função comum para mostrar o nome
+function mostraNomePadrao(usuario){
+    console.log(usuario.nome);
+}
+
+mostraNomePadrao(usuario);
+
+//Função com parâmetro desestruturado para pegar as propiedades do objeto
+function mostraNome({ nome, idade, endereco:{cidade} }){ //Passamos um objeto como parâmetro
+    console.log(nome,idade,cidade);
+}
+mostraNome(usuario);
+*/
+
+//Operadores rest/spread
