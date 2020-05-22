@@ -277,5 +277,17 @@ console.log(usuario);
 //*As dependencias que instalamos neste projeto são apenas para ambiente de desenvolvimento | No ambiente de produção nós só jogamos o bundle.js
 //Criar arquivo de configuração no projeto do webpack | webpack.config.js
 //Alterar script no package.json para executar o webpack | webpack --mode=development -w
-import {soma} from './funcoes'; //importando arquivos
-console.log(soma(1,2));
+
+//import {soma as somaFunction, sub} from './funcoes'; //importando arquivos | devemos importar com o mesmo nome -ou com 'as' [nomedesejado]- | não precisamos especificar a extensão
+//console.log(somaFunction(1,2));
+
+import soma, {sub} from './funcoes'; // importando função default e função export comum
+//console.log(soma(1,2));
+//console.log(sub(4,2));
+
+import somaHaha from './soma'; //ao importar um arquivo com export default, não precisamos passar dentro do objeto o nome da funlção, nem mesmo o nome exato da função a ser exportada
+//console.log(somaHaha(5,3));
+
+import * as funcoes from './funcoes'; // importando todas as funoes do arquivo para um objeto
+//console.log(funcoes.default(1,2));
+//console.log(funcoes.sub(2,1));
