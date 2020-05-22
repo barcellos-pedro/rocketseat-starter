@@ -132,3 +132,57 @@ mostraInfo({ nome: 'Diego', idade: 23,});
 ////////////////////////////////////////////////////////////////////////
 
 //Exercício 5
+//Exercício 5.1
+const arr = [1, 2, 3, 4, 5, 6];
+
+let [x,...y] = arr;
+
+//console.log(x);
+//console.log(y);
+
+let soma = (...params) => {
+    let sum = params.reduce((total,next) => {return total + next;})
+    return sum;
+}
+
+//console.log(soma(1, 2, 3, 4, 5, 6)); // 21
+//console.log(soma(1, 2)); // 3
+
+//Exercício 5.2
+const usuario = {
+    nome: 'Diego',
+    idade: 23,
+    endereco: {
+    cidade: 'Rio do Sul',
+    uf: 'SC',
+    pais: 'Brasil',
+    }
+};
+
+let usuario2 = { ...usuario, nome:'Gabriel' };
+let usuario3 = { ...usuario, endereco:{cidade:'Lontras'} };
+
+console.log(usuario2);
+console.log(usuario3);
+
+////////////////////////////////////////////////////////////////////////
+/*
+//Exercício 6
+const usuario = 'Diego';
+const idade = 23;
+console.log(`Ò usuário ${usuario} possui ${idade} anos.`);
+
+////////////////////////////////////////////////////////////////////////
+
+//Exercício 7
+const nome = 'Diego';
+const idade = 23;
+
+const usuario = {
+ nome,
+ idade,
+ cidade: 'Rio do Sul',
+};
+
+//console.log(usuario);
+*/
