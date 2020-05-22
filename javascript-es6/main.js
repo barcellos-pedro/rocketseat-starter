@@ -267,3 +267,15 @@ const usuario = {
 
 console.log(usuario);
 */
+
+///////////////////////////////////////////////
+
+//Configurar Webpack
+//Serviço que disponibiliza uma forma de trabalhar com vários arquivos JS, imagem, JSON, etc na aplicação com js
+//E Serão transpilados/convertidos em bundle.js
+//yarn add webpack webpack-cli -d | -d para desenvolvimento
+//*As dependencias que instalamos neste projeto são apenas para ambiente de desenvolvimento | No ambiente de produção nós só jogamos o bundle.js
+//Criar arquivo de configuração no projeto do webpack | webpack.config.js
+//Alterar script no package.json para executar o webpack | webpack --mode=development -w
+import {soma} from './funcoes'; //importando arquivos
+console.log(soma(1,2));
