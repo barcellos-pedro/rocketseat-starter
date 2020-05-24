@@ -1,8 +1,11 @@
 module.exports = {
-    entry: './main.js', // entry recebe o arquivo principal
+    entry: './src/main.js', // entry recebe o arquivo principal
     output: { // pra qual arquivo/local mandamos o arquivo convertido pra antes do ES6+
-        path: __dirname, // variavel global que se refere ao diretorio do config do webpack
+        path: __dirname + '/public', // variavel global que se refere ao diretorio do config do webpack
         filename: 'bundle.js', // nome do arquivo transpilado
+    },
+    devServer: {
+        contentBase: __dirname + '/public' // caminho para onde irá abrir o servidor pra aplicação, e onde vai ficar o nosso index.html
     },
     module: {
         rules: [
