@@ -281,9 +281,10 @@ console.log(usuario);
 //import {soma as somaFunction, sub} from './funcoes'; //importando arquivos | devemos importar com o mesmo nome -ou com 'as' [nomedesejado]- | não precisamos especificar a extensão
 //console.log(somaFunction(1,2));
 
-import soma, {sub} from '../funcoes'; // importando função default e função export comum
+import soma, {sub, mult} from '../funcoes'; // importando função default e função export comum
 //console.log(soma(1,2));
 //console.log(sub(4,2));
+//console.log(mult(2,2))
 
 import somaHaha from '../soma'; //ao importar um arquivo com export default, não precisamos passar dentro do objeto o nome da funlção, nem mesmo o nome exato da função a ser exportada
 //console.log(somaHaha(5,3));
@@ -295,3 +296,16 @@ import * as funcoes from '../funcoes'; // importando todas as funoes do arquivo 
 //A partir do momento que estamos usando o webpack dev server, ele irá embutir no código o bundle.js, porém ele não será criado de fato no projeto
 //Em caso de produção, precisamos gerar o arquivo bundle. É só adicionar um script no package.json = "build": "webpack --mode=production"
 //Webpack dev server é bom para trabalhar offline | Ele também possui live reloading
+
+//Desafio webpack
+//Exercício 1.1
+//import ClasseUsuario from '../functions';
+//ClasseUsuario.info(); //Como a classe guarda apensa um método estático, não precisamos instanciar um novo objeto a partir da classe para utulizar a função
+
+//Exercício 1.2
+//import {idade} from'../functions';
+//console.log(idade);
+
+//Exercício 1.3
+//import Usuario, {idade as IdadeUsuario} from '../functions';
+//console.log(IdadeUsuario);
