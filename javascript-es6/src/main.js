@@ -398,12 +398,13 @@ executaPromise2();
 
 //Axios
 //Instalar => yarn add axios | não é uma dependência de dev
+/*
 import axios from 'axios';
 
 class Api{
     static async getUserInfo(username){ //Async/await com classe stática | Com async/await ao invés de resolve & reject usamos try/catch
         try{
-            const response = await (axios.get(`https://api.github.com/users/${username}`));
+            const response = await (axios.get(`https://api.github.com/users/${username}`)); //axios retorna uma promise, por isso é possível utilizar como await
             console.log(response);
         }
         catch(err){
@@ -413,3 +414,40 @@ class Api{
 }
 
 Api.getUserInfo('barcellos-pedro');
+*/
+
+//Meus exemplos com Async/await
+/*
+let minhaPromise = () => new Promise((resolve,reject)=>{
+    resolve('Deu bom!');
+    reject('Deu ruim');
+})
+
+minhaPromise()
+    .then(response=>console.log(response))
+    .catch(err=>console.log(err))
+
+let minhaPromise2 = () => new Promise((resolve,reject)=>{
+    resolve('Rodou!');
+    reject('Babou');
+})
+
+let executaPromise2 = async () => {
+    try{
+        console.log(await minhaPromise2());
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+executaPromise2();
+*/
+
+/* ################################################### */
+
+//Desafio Async/await
+//Todos os exercícios abaixo necessitam que você esteja com o plugin do Async/Await do Babel
+//e o babel-polyfill devidamente configurados. Em alguns exercícios é necessário instalar o Axios.
+
+//Exercícios
