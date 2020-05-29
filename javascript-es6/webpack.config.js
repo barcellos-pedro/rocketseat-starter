@@ -1,7 +1,7 @@
 module.exports = {
-    entry: './src/main.js', // entry recebe o arquivo principal
+    entry: ['@babel/polyfill', './src/main.js'], // entry recebe o arquivo principal
     output: { // pra qual arquivo/local mandamos o arquivo convertido pra antes do ES6+
-        path: __dirname + '/public', // variavel global que se refere ao diretorio do config do webpack
+        path: __dirname + '/public', // ___dirname variavel global que se refere ao diretorio raiz do projeto
         filename: 'bundle.js', // nome do arquivo transpilado
     },
     devServer: {

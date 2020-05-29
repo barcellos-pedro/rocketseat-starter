@@ -309,3 +309,51 @@ import * as funcoes from '../funcoes'; // importando todas as funoes do arquivo 
 //Exercício 1.3
 //import Usuario, {idade as IdadeUsuario} from '../functions';
 //console.log(IdadeUsuario);
+
+//Async/await | ES8
+//'Precisa' instalar um novo plugin para utilizar o async/await, assim como fizemos com o rest/spread
+//yarn add @babel/plugin-transform-async-to-generator -D e yarn add @babel/polyfill -D
+//Após instalar os plugins, add ao babel.rc "plugins" = @babel/plugin-transform-async-to-generator -D
+//E o polyfill será add ao entry no webpack.config ['@babel/polyfill', './src/main.js']
+
+const minhaPromise = () => new Promise((resolve,reject)=>{
+    setTimeout(()=>{ resolve('OK') },2000)
+})
+/*
+minhaPromise()
+    .then(response=>{
+        console.log(response)
+    })
+    .catch(err=>{
+       console.log(err);
+    });
+*/
+
+async function executaPromise(){ //Uma async function também vira uma Promise
+    //Podemos fazer assim
+    const response = await minhaPromise();
+    console.log(response);
+
+    //Ou assim
+    console.log(await minhaPromise()); // A partir da segunda linha, só será executada se a primeira chamada for retornada
+    console.log(await minhaPromise());
+    console.log(await minhaPromise());
+
+    /* Chamada sem async/await
+    minhaPromise().then(response=> console.log(response))
+    minhaPromise().then(response=> console.log(response))
+    minhaPromise().then(response=> console.log(response))
+    */
+}
+executaPromise();
+//Podemos esperar o resultado dessa função com .then()
+//executaPromise().then(); ou também await executaPromise()
+//Não podemos utilizar o await na frente de uma Promise se não estivermos dentro da função com async
+
+//Com arrow function
+const executaPromise2 = async ()=> {
+    console.log(await minhaPromise());
+    console.log(await minhaPromise());   
+    console.log(await minhaPromise());
+}
+executaPromise2();
