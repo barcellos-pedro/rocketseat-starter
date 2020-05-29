@@ -19,5 +19,8 @@
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack --mode=production",
     "desafio-conceitos": "babel ./desafio-conceitos.js -o ./bundle-desafio-conceitos.js -w"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
   }
 }

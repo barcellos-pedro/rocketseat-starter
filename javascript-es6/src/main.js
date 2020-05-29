@@ -397,3 +397,19 @@ executaPromise2();
 */
 
 //Axios
+//Instalar => yarn add axios | não é uma dependência de dev
+import axios from 'axios';
+
+class Api{
+    static async getUserInfo(username){ //Async/await com classe stática | Com async/await ao invés de resolve & reject usamos try/catch
+        try{
+            const response = await (axios.get(`https://api.github.com/users/${username}`));
+            console.log(response);
+        }
+        catch(err){
+            console.warn('Erro na API');
+        }
+    }
+}
+
+Api.getUserInfo('barcellos-pedro');
