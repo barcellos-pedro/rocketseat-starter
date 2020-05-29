@@ -1,6 +1,8 @@
 //ES6+ | Conceitos
 //Classes
+
 /*
+
 class List{
     constructor(){
         this.data = [];
@@ -30,6 +32,7 @@ document.querySelector("button#novotodo").onclick = function(){
 }
 
 MinhaLista.mostraUsuario();
+
 */
 
 //Método estático
@@ -37,18 +40,22 @@ MinhaLista.mostraUsuario();
 //Com métodos estáticos não é necessário instanciar um novo objeto com a Classe Matematica -variavel = new Matematica(), linha 41- para utilizar seus métodos
 //Métodos estáticos geralmente não possuem constructor e são bons para utilizar para retornar dados com suas funções
 /*
+
 class Matematica{
     static soma(a,b){
         return a+b;
     }
 }
 console.log(Matematica.soma(1,2)); //Podemos chamá-la direto
+
 */
 
 //Const & Let e variável de escopo(let)
 //Constantes não podem sem mudadas. Somente mutadas.
 //Mutação é quando se trabalha como mesmo formato do objeto, porém, nós alteramos os valor dentro do objeto ou vetor;
+
 /*
+
 function teste(x){
     let y = 2;
     if(x>5){
@@ -59,10 +66,13 @@ function teste(x){
 
 teste(10);
 console.log(y); // y não irá aparecer aqui por ser uma variavel de escopo, seu escopo é dentro da função teste
+
 */
 
 //Operações em vetores
+
 /*
+
 const arr = [1,3,4,5,8,9];
 
 //Map
@@ -94,10 +104,13 @@ const find = arr.find(function(item){
     return item === 4; // irá retornar 4, caso não encontre irá retorna undefined
 });
 console.log(find);
+
 */
 
 //Arrow functions
+
 /*
+
 const arr = [1,3,4,5,6];
 
 const newArr3 = arr.map((item)=>{
@@ -120,10 +133,13 @@ const teste3 = () => [1,2,3];
 const teste2 = () => "Pedro";
 const teste = () => ({nome:"Diego"}); // Para retornar um objeto diretamente se o return, é necessário envolver o objeto no ()
 console.log(teste());
+
 */
 
 //Valores padrão
+
 /*
+
 //Podemos setar valores padrão para os parâmetros dentro de uma função
 function soma(a=3,b=6){
     return a+b;
@@ -134,10 +150,13 @@ console.log(soma()); //Retorna 9
 
 const soma2 = (a = 3, b = 6)=> a + b;
 console.log(soma2());
+
 */
 
 //Desestruturação | de objetos no JS ES6+ pra frente
+
 /*
+
 const usuario = {
     nome: "Diego",
     idade: 23,
@@ -170,18 +189,22 @@ function mostraNome({ nome, idade, endereco:{cidade} }){ //Passamos um objeto co
     console.log(nome,idade,cidade);
 }
 mostraNome(usuario);
+
 */
 
 //Operadores rest/spread
 
-/*Esses operadores ainda não foram acoplados a versão principal do babel
+/*
+//Esses operadores ainda não foram acoplados a versão principal do babel
 //Então é necessário instalá-los em forma de plug-ins
 //No terminal = yarn add @babel/plugin-proposal-object-rest-spread
 //No babel.rc, criar um novo array de plugins = "plugins": ["@babel/plugin-proposal-object-rest-spread"]
 //Parar o yarn dev e executar novamente
+
 */
 
 /*
+
 //REST
 //Server para pegar o resto das propiedades de um objeto ou vetor
 
@@ -240,22 +263,27 @@ const usuario1 = {
 
 const usuario2 = {...usuario1, nome:"Gabriel"}; //Pegamos todas as propiedades do objeto usuario1, porém alteramos o valor do nome
 console.log(usuario2);
+
 */
 
 //Template Literals
 //Forma de incluir variáveis dentro de Strings a partir do ES6+
 /*
+
 const nome = "Diego";
 const idade = 23;
 //Concatenando de forma comum
 console.log("Meu nome é " + nome + " e tenho " + idade + " anos");
 //Concatenando com Template Literals
 console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+
 */
 
 //Object Short Syntax
 //Quando o nome da propiedade do objeto for igual o nome da variável, podemos deixar somente a variavel/propieade 1 vez
+
 /*
+
 const nome = 'Diego';
 const idade = 23
 
@@ -266,6 +294,7 @@ const usuario = {
 };
 
 console.log(usuario);
+
 */
 
 ///////////////////////////////////////////////
@@ -281,15 +310,15 @@ console.log(usuario);
 //import {soma as somaFunction, sub} from './funcoes'; //importando arquivos | devemos importar com o mesmo nome -ou com 'as' [nomedesejado]- | não precisamos especificar a extensão
 //console.log(somaFunction(1,2));
 
-import soma, {sub, mult} from '../funcoes'; // importando função default e função export comum
+//import soma, {sub, mult} from '../funcoes'; // importando função default e função export comum
 //console.log(soma(1,2));
 //console.log(sub(4,2));
 //console.log(mult(2,2))
 
-import somaHaha from '../soma'; //ao importar um arquivo com export default, não precisamos passar dentro do objeto o nome da funlção, nem mesmo o nome exato da função a ser exportada
+//import somaHaha from '../soma'; //ao importar um arquivo com export default, não precisamos passar dentro do objeto o nome da funlção, nem mesmo o nome exato da função a ser exportada
 //console.log(somaHaha(5,3));
 
-import * as funcoes from '../funcoes'; // importando todas as funoes do arquivo para um objeto
+//import * as funcoes from '../funcoes'; // importando todas as funoes do arquivo para um objeto
 //console.log(funcoes.default(1,2));
 //console.log(funcoes.sub(2,1));
 
@@ -316,10 +345,14 @@ import * as funcoes from '../funcoes'; // importando todas as funoes do arquivo 
 //Após instalar os plugins, add ao babel.rc "plugins" = @babel/plugin-transform-async-to-generator -D
 //E o polyfill será add ao entry no webpack.config ['@babel/polyfill', './src/main.js']
 
+/*
+
 const minhaPromise = () => new Promise((resolve,reject)=>{
     setTimeout(()=>{ resolve('OK') },2000)
 })
+
 /*
+
 minhaPromise()
     .then(response=>{
         console.log(response)
@@ -327,7 +360,10 @@ minhaPromise()
     .catch(err=>{
        console.log(err);
     });
+
 */
+
+/*
 
 async function executaPromise(){ //Uma async function também vira uma Promise
     //Podemos fazer assim
@@ -339,11 +375,11 @@ async function executaPromise(){ //Uma async function também vira uma Promise
     console.log(await minhaPromise());
     console.log(await minhaPromise());
 
-    /* Chamada sem async/await
+    Chamada sem async/await
     minhaPromise().then(response=> console.log(response))
     minhaPromise().then(response=> console.log(response))
     minhaPromise().then(response=> console.log(response))
-    */
+    
 }
 executaPromise();
 //Podemos esperar o resultado dessa função com .then()
@@ -357,3 +393,7 @@ const executaPromise2 = async ()=> {
     console.log(await minhaPromise());
 }
 executaPromise2();
+
+*/
+
+//Axios
